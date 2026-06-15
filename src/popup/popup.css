@@ -1,0 +1,124 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 400px;
+  min-height: 480px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fafafa;
+}
+
+.app { display: flex; flex-direction: column; min-height: 480px; }
+
+.header {
+  padding: 16px 20px 12px;
+  background: linear-gradient(135deg, #ff2442, #ff6b6b);
+  color: #fff;
+}
+
+.header h1 { font-size: 18px; font-weight: 700; }
+.header p { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+
+.tabs { display: flex; background: #fff; border-bottom: 1px solid #eee; }
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tab.active { color: #ff2442; border-bottom-color: #ff2442; }
+
+.content { flex: 1; padding: 16px 20px; overflow-y: auto; }
+
+.btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-primary { color: #fff; background: linear-gradient(135deg, #ff2442, #ff6b6b); }
+.btn-secondary { color: #ff2442; background: #fff; border: 1px solid #ff2442; }
+.btn-danger { color: #e53e3e; background: #fff; border: 1px solid #e53e3e; }
+.btn-sm { padding: 4px 10px; font-size: 12px; }
+
+.form-group { margin-bottom: 12px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: #666; margin-bottom: 4px; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 8px 10px; font-size: 13px;
+  border: 1px solid #ddd; border-radius: 8px; background: #fff; font-family: inherit;
+}
+.form-group textarea { resize: vertical; min-height: 60px; }
+.form-hint { font-size: 11px; color: #999; margin-top: 2px; }
+
+.tag-input-row { display: flex; gap: 6px; margin-bottom: 6px; }
+.tag-input-row input { flex: 1; }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; font-size: 12px; background: #fff0f2; color: #ff2442; border-radius: 12px;
+}
+.tag button { background: none; border: none; color: #ff2442; cursor: pointer; }
+
+.profile-card {
+  background: #fff; border: 1px solid #eee; border-radius: 10px;
+  padding: 12px 14px; margin-bottom: 8px;
+}
+.profile-card.default { border-color: #ff2442; background: #fff8f9; }
+.profile-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.profile-card-name { font-weight: 600; font-size: 14px; }
+.profile-card-badge { font-size: 10px; font-weight: 600; color: #ff2442; background: #fff0f2; padding: 2px 6px; border-radius: 8px; }
+.profile-card-meta { font-size: 12px; color: #999; margin-bottom: 8px; }
+.profile-card-actions { display: flex; gap: 6px; }
+
+.empty-state { text-align: center; padding: 32px 16px; color: #999; }
+.empty-state p { margin-bottom: 12px; font-size: 13px; }
+
+.form-actions { display: flex; gap: 8px; margin-top: 16px; padding-top: 12px; border-top: 1px solid #eee; }
+.example-row { background: #f8f8f8; border-radius: 8px; padding: 10px; margin-bottom: 8px; }
+.section-title { font-size: 13px; font-weight: 600; color: #333; margin: 16px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #eee; }
+
+.alert { padding: 10px 12px; border-radius: 8px; font-size: 12px; margin-bottom: 12px; }
+.alert-warning { background: #fff8e6; color: #b8860b; border: 1px solid #ffe58f; }
+.alert-success { background: #f0fff4; color: #276749; border: 1px solid #c6f6d5; }
+
+.history-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+}
+
+.history-card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.history-comment label, .history-reply label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.history-comment p, .history-reply p {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}

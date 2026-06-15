@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: replypilot-db
+    environment:
+      POSTGRES_USER: replypilot
+      POSTGRES_PASSWORD: replypilot
+      POSTGRES_DB: replypilot
+    ports:
+      - "5433:5432"
+    volumes:
+      - replypilot_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U replypilot -d replypilot"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  replypilot_pgdata:

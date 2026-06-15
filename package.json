@@ -1,0 +1,28 @@
+{
+  "name": "replypilot",
+  "version": "0.1.0",
+  "description": "ReplyPilot helps creators manage comments with AI while staying true to their unique voice.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "dev:all": "bash scripts/dev.sh"
+  },
+  "keywords": ["chrome-extension", "xiaohongshu", "ai-reply"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.6.1",
+    "@types/chrome": "^0.1.43",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.4.3"
+  }
+}

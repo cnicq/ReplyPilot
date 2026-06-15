@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+.env
+.env.*
+!.env.example
+!backend/.env.example
+backend/.env
+backend/.venv/
+backend/**/__pycache__/
+.venv/
+*.pyc
+
+# Local database & profile exports (never commit real user data)
+*.sql
+*.dump
+*.sqlite
+*.sqlite3
+exports/
+profiles.json
+profile-export*.json

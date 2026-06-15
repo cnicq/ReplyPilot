@@ -103,7 +103,17 @@ export default function ProfileForm({ initial, onSave, onCancel }: Props) {
           placeholder="描述你平时怎么写评论：句式、用词习惯、开头结尾、绝不用的表达…"
           rows={4}
         />
-        <p className="form-hint">最重要的字段 — 让 AI 学会以这个账号的身份回复</p>
+        <p className="form-hint">口语习惯与用词偏好</p>
+      </div>
+      <div className="form-group">
+        <label>回复风格 Prompt</label>
+        <textarea
+          value={form.replyVoiceGuide}
+          onChange={(e) => update('replyVoiceGuide', e.target.value)}
+          placeholder={'你正在扮演：[你的身份]\n\n回复风格：\n- 像真人聊天，尽量短\n- 优先讲自己的感受\n\n少用：\n- 鸡汤句式\n\n优先使用：\n- 其实我也…\n- 我也不知道…'}
+          rows={14}
+        />
+        <p className="form-hint">生成回复时最重要的规则 — 角色、语气、禁用表达、优先句式都写在这里</p>
       </div>
       <div className="form-group">
         <label>人设描述</label>

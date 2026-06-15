@@ -20,6 +20,7 @@ export type SocialProfile = {
   targetAudience: string;
   persona: string;
   writingDna: string;
+  replyVoiceGuide: string;
   tone: string[];
   communicationStyle: string[];
   preferredTopics: string[];
@@ -48,7 +49,7 @@ export type ReplyHistoryItem = {
 };
 
 export type GeneratedReply = {
-  type: 'sincere' | 'humorous' | 'engagement';
+  type: 'sincere' | 'restrained' | 'reflective';
   text: string;
 };
 
@@ -132,6 +133,7 @@ export function createEmptyProfile(): Omit<SocialProfile, 'id' | 'createdAt' | '
     targetAudience: '',
     persona: '',
     writingDna: '',
+    replyVoiceGuide: '',
     tone: [],
     communicationStyle: [],
     preferredTopics: [],

@@ -23,6 +23,7 @@ class Profile(Base):
 
     persona: Mapped[str] = mapped_column(Text, default="")
     writing_dna: Mapped[str] = mapped_column(Text, default="")
+    reply_voice_guide: Mapped[str] = mapped_column(Text, default="")
     tone: Mapped[list] = mapped_column(JSONB, default=list)
     communication_style: Mapped[list] = mapped_column(JSONB, default=list)
     preferred_topics: Mapped[list] = mapped_column(JSONB, default=list)

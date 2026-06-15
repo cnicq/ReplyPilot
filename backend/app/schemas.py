@@ -24,6 +24,7 @@ class ProfileBase(BaseModel):
     target_audience: str = ""
     persona: str = ""
     writing_dna: str = ""
+    reply_voice_guide: str = ""
     tone: list[str] = Field(default_factory=list)
     communication_style: list[str] = Field(default_factory=list)
     preferred_topics: list[str] = Field(default_factory=list)
@@ -76,7 +77,7 @@ class GenerateRepliesRequest(BaseModel):
 
 
 class GeneratedReply(BaseModel):
-    type: Literal["sincere", "humorous", "engagement"]
+    type: Literal["sincere", "restrained", "reflective"]
     text: str
 
 

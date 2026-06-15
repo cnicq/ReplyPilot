@@ -220,9 +220,12 @@ function renderReplies(
   lastGeneratedTexts = replies.map((r) => r.text);
 
   const typeLabel: Record<string, string> = {
-    sincere: '真诚',
-    humorous: '轻松幽默',
-    engagement: '互动引导',
+    sincere: '真诚直接',
+    restrained: '克制简约',
+    reflective: '经历共鸣',
+    // legacy cached replies
+    humorous: '克制简约',
+    engagement: '经历共鸣',
   };
 
   repliesEl.innerHTML = replies

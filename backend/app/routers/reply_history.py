@@ -15,13 +15,19 @@ from app.services.settings import get_default_profile
 
 router = APIRouter(prefix="/reply-history", tags=["reply-history"])
 
-REPLY_TYPES = ("sincere", "humorous", "engagement")
+REPLY_STYLE_IDS = ("sincere", "restrained", "reflective")
+
+REPLY_STYLE_LABELS = {
+    "sincere": "真诚直接",
+    "restrained": "克制简约",
+    "reflective": "经历共鸣",
+}
 
 
 def _to_generated_replies(texts: list[str]) -> list[GeneratedReply]:
     return [
         GeneratedReply(
-            type=REPLY_TYPES[i] if i < len(REPLY_TYPES) else "sincere",
+            type=REPLY_STYLE_IDS[i] if i < len(REPLY_STYLE_IDS) else "sincere",
             text=text,
         )
         for i, text in enumerate(texts)

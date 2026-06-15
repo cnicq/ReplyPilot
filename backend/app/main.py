@@ -16,6 +16,9 @@ async def lifespan(_app: FastAPI):
         conn.execute(text(
             "ALTER TABLE profiles ADD COLUMN IF NOT EXISTS writing_dna TEXT NOT NULL DEFAULT ''"
         ))
+        conn.execute(text(
+            "ALTER TABLE profiles ADD COLUMN IF NOT EXISTS reply_voice_guide TEXT NOT NULL DEFAULT ''"
+        ))
         conn.commit()
     yield
 

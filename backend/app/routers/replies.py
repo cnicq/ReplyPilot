@@ -14,6 +14,15 @@ from app.services.settings import (
 
 router = APIRouter(prefix="/replies", tags=["replies"])
 
+LEGACY_REPLY_TYPE_MAP = {
+    "humorous": "restrained",
+    "engagement": "reflective",
+}
+
+
+def _normalize_reply_type(reply_type: str) -> str:
+    return LEGACY_REPLY_TYPE_MAP.get(reply_type, reply_type)
+
 
 @router.post("/generate", response_model=GenerateRepliesResponse)
 async def generate_replies(data: GenerateRepliesRequest, db: Session = Depends(get_db)):
@@ -35,7 +44,10 @@ async def generate_replies(data: GenerateRepliesRequest, db: Session = Depends(g
     except ValueError as e:
         raise HTTPException(status_code=502, detail=str(e)) from e
 
-    replies = [GeneratedReply(**r) for r in raw_replies]
+    replies = [
+        GeneratedReply(type=_normalize_reply_type(r["type"]), text=r["text"])
+        for r in raw_replies
+    ]
 
     history = ReplyHistory(
         profile_id=profile.id,
